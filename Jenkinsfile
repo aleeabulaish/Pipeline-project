@@ -4,10 +4,11 @@ pipeline {
         jdk 'Java17'
         maven 'Maven3'
     }
+    
     stages{
-        stage("Cleanup Workspace"){
+        stage("Cleanup Workspace") {
                steps {
-                CleanWs()
+                cleanWs()
                }
         }
 
@@ -16,11 +17,13 @@ pipeline {
                    git branch: 'main' , credentialsId: 'github' , url: 'https://github.com/aleeabulaish/Pipeline-project.git'
                }
     }
+        
        stage("Build Application") {
            steps {
                sh "mvn clean package"
        }
   }
+        
       stage("Test Application") {
           steps {
                 sh "mvn test"
