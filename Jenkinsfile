@@ -6,7 +6,7 @@ pipeline {
         
     }
      environment  {
-        APP_NAME = "Pipeline-app-project" 
+        APP_NAME = "Pipeline-project" 
         RELEASE = "1.0.0"
         DOCKER_USER = "aleeabulaish123"
         DOCKER_PASS = 'dockerhub'
@@ -69,6 +69,7 @@ pipeline {
                     }
                 }
             }
+            
         }
     }
 }
